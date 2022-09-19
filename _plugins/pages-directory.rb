@@ -8,7 +8,7 @@ module Jekyll
 
         if File.file?(File.join(site.source, '/', f))
           filename = f.match(/[^\/]*$/)[0]
-          clean_filepath = f&.gsub(/^#{pages_dir}\//, '')
+          clean_filepath = f.gsub(/^#{pages_dir}\//, '')
           clean_dir = extract_directory(clean_filepath)
 
           site.pages << PagesDirPage.new(site, site.source, clean_dir, filename, pages_dir)
